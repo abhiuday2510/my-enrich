@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     final h = size.height;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: Column(
         children: [
           GestureDetector(
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             backgroundColor: Colors.transparent,
             elevation: 0,
             selectedItemColor: theme.colorScheme.primary,
-            unselectedItemColor: theme.colorScheme.onBackground.withOpacity(0.4),
+            unselectedItemColor: theme.colorScheme.onSurface.withOpacity(0.4),
             type: BottomNavigationBarType.fixed,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),

@@ -41,7 +41,7 @@ class CustomTextField extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(vertical: h * 0.02, horizontal: w * 0.04),
           prefixIcon: icon != null ? Icon(icon, color: theme.colorScheme.primary) : null,
           hintText: hintText,
-          hintStyle: TextStyle(color: theme.colorScheme.onBackground.withOpacity(0.5)),
+          hintStyle: TextStyle(color: theme.colorScheme.onSurface.withOpacity(0.5)),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(w * 0.035),
             borderSide: BorderSide.none,

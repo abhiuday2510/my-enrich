@@ -1,8 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 import 'package:my_enrich/core/constants/app_theme.dart';
 import 'package:my_enrich/routes.dart';
 
-void main() {
+final log = Logger('FirebaseInit');
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((record) {
+    debugPrint('${record.level.name}: ${record.time}: ${record.loggerName}: ${record.message}');
+  });
+
+  try {
+    await Firebase.initializeApp();
+    log.info('✅ Firebase initialized successfully');
+  } catch (e, stackTrace) {
+    log.severe('❌ Firebase initialization failed', e, stackTrace);
+  }
+
   runApp(const MyApp());
 }
 

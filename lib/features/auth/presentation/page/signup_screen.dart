@@ -14,7 +14,7 @@ class SignUpScreen extends StatelessWidget {
     final h = size.height;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: w * 0.08),
@@ -31,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: w * 0.06,
                       fontWeight: FontWeight.bold,
-                      color: theme.colorScheme.onBackground,
+                      color: theme.colorScheme.onSurface,
                     ),
                   ),
                   Hero(
@@ -52,7 +52,7 @@ class SignUpScreen extends StatelessWidget {
                 'Sign up to explore and earn rewards',
                 style: TextStyle(
                   fontSize: w * 0.04,
-                  color: theme.colorScheme.onBackground.withOpacity(0.6),
+                  color: theme.colorScheme.onSurface.withOpacity(0.6),
                 ),
               ),
               SizedBox(height: h * 0.025),

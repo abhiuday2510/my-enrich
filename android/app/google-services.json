@@ -1,0 +1,206 @@
+{
+  "project_info": {
+    "project_number": "1008027347838",
+    "project_id": "enrich-e7c1e",
+    "storage_bucket": "enrich-e7c1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008027347838:android:1bcdca94cffff01ed0a12f",
+        "android_client_info": {
+          "package_name": "com.example.enrich"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008027347838-34q2rhdjop9b16uftqbpnjju0c7g4bk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enrich",
+            "certificate_hash": "e1afd79279480d8ae78f02c50ebdb37e59b324d2"
+          }
+        },
+        {
+          "client_id": "1008027347838-8622pun5v4r1419m3lh91e4i66o5ivq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enrich",
+            "certificate_hash": "a7a0855b1823e2a1e89a997474f9b0dd68063d14"
+          }
+        },
+        {
+          "client_id": "1008027347838-ckn3gonhk8l6g0bijrqlclafb7f3vump.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enrich",
+            "certificate_hash": "786f43eb64bcc6593c269285cfb31846ce4b285d"
+          }
+        },
+        {
+          "client_id": "1008027347838-l2a2rg4vgahqk35r6rh54739kp80l8u3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enrich",
+            "certificate_hash": "6e70fd7d210571bd74c7deaeb4eba7cb9e524f09"
+          }
+        },
+        {
+          "client_id": "1008027347838-u9qdckt1uibr14kskpl5t0ki5nn0s6pf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enrich",
+            "certificate_hash": "5a0d63b34d8d53d73061dfdca672cd860900f3df"
+          }
+        },
+        {
+          "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZKi0CVTvuOBRkyHgcxQy1QyJSfl6UOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1008027347838-rdu0kq1q7f7gsu20frgr1dil22urv0ni.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.enrich"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008027347838:android:98ea97ce57987191d0a12f",
+        "android_client_info": {
+          "package_name": "com.example.my_enrich"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008027347838-bh3vbavcqi2n0fge4u93evme9kbtdf9a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.my_enrich",
+            "certificate_hash": "6e70fd7d210571bd74c7deaeb4eba7cb9e524f09"
+          }
+        },
+        {
+          "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZKi0CVTvuOBRkyHgcxQy1QyJSfl6UOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1008027347838-rdu0kq1q7f7gsu20frgr1dil22urv0ni.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.enrich"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008027347838:android:457bbbc04720d4d2d0a12f",
+        "android_client_info": {
+          "package_name": "com.metanoic.enrich"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008027347838-1jjd1959poe8mrqd6eivenl5npa2t4g5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metanoic.enrich",
+            "certificate_hash": "5a0d63b34d8d53d73061dfdca672cd860900f3df"
+          }
+        },
+        {
+          "client_id": "1008027347838-98hbnc27mvfbcthagrmj5ito7l3f837o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metanoic.enrich",
+            "certificate_hash": "a7a0855b1823e2a1e89a997474f9b0dd68063d14"
+          }
+        },
+        {
+          "client_id": "1008027347838-cvko349fa1k7sdfs765k9rvbio08952n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metanoic.enrich",
+            "certificate_hash": "e1afd79279480d8ae78f02c50ebdb37e59b324d2"
+          }
+        },
+        {
+          "client_id": "1008027347838-ev7bm3qe50n2egkilbtjcgb8hjs1e9no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metanoic.enrich",
+            "certificate_hash": "6e70fd7d210571bd74c7deaeb4eba7cb9e524f09"
+          }
+        },
+        {
+          "client_id": "1008027347838-vhf1kodv3cgfdflk1q35fpbpe2r14d9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metanoic.enrich",
+            "certificate_hash": "786f43eb64bcc6593c269285cfb31846ce4b285d"
+          }
+        },
+        {
+          "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZKi0CVTvuOBRkyHgcxQy1QyJSfl6UOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008027347838-3gvdme0penmvg2qcp9g162jkpslct0vh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1008027347838-rdu0kq1q7f7gsu20frgr1dil22urv0ni.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.enrich"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
