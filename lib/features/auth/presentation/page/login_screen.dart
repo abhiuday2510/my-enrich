@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
     final h = size.height;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -36,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: w * 0.07,
                     fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.onBackground,
+                    color: theme.colorScheme.onSurface,
                   ),
                 ),
                 SizedBox(height: h * 0.01),
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                   'Please login to your account',
                   style: TextStyle(
                     fontSize: w * 0.04,
-                    color: theme.colorScheme.onBackground.withOpacity(0.6),
+                    color: theme.colorScheme.onSurface.withOpacity(0.6),
                   ),
                 ),
                 SizedBox(height: h * 0.04),
@@ -121,7 +121,7 @@ class LoginScreen extends StatelessWidget {
                         'or sign in with',
                         style: TextStyle(
                           fontSize: w * 0.035,
-                          color: theme.colorScheme.onBackground.withOpacity(0.6),
+                          color: theme.colorScheme.onSurface.withOpacity(0.6),
                         ),
                       ),
                     ),
