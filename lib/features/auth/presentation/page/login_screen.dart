@@ -105,7 +105,7 @@ class LoginScreen extends StatelessWidget {
                 PrimaryButton(
                   text: 'Login',
                   onPressed: () {
-                    // Handle login
+                    GoRouter.of(context).go('/home');
                   },
                 ),
 
