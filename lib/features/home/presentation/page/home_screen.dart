@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_enrich/core/constants/fancy_button.dart';
+import 'package:my_enrich/features/home/presentation/widgets/fancy_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

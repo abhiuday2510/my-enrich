@@ -2,17 +2,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 import 'package:my_enrich/core/constants/app_theme.dart';
-import 'package:my_enrich/routes.dart';
+import 'package:my_enrich/core/utils/logger.dart';
+import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
+import 'package:my_enrich/injection.dart';
+import 'package:my_enrich/routes/app_router.dart';
+import 'package:provider/provider.dart';
 
 final log = Logger('FirebaseInit');
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Logger.root.level = Level.ALL;
-  Logger.root.onRecord.listen((record) {
-    debugPrint('${record.level.name}: ${record.time}: ${record.loggerName}: ${record.message}');
-  });
+  setupLogging();
 
   try {
     await Firebase.initializeApp();
@@ -27,15 +28,22 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
+@override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'My Enrich',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      routerConfig: router,
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: registerProviders(),
+      child: Consumer<AuthProvider>(
+        builder: (context, auth, _) {
+          final router = createRouter(auth);
+          return MaterialApp.router(
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: ThemeMode.system,
+            routerConfig: router,
+            debugShowCheckedModeBanner: false,
+          );
+        },
+      ),
     );
   }
 }
