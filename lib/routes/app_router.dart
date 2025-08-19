@@ -1,16 +1,13 @@
 import 'package:go_router/go_router.dart';
-import 'package:logging/logging.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
 import 'package:my_enrich/features/auth/presentation/page/login_screen.dart';
 import 'package:my_enrich/features/auth/presentation/page/signup_screen.dart';
 import 'package:my_enrich/features/home/presentation/page/home_screen.dart';
-import 'package:my_enrich/features/splash/presentation/splash_screen.dart';
+import 'package:my_enrich/features/splash/presentation/page/splash_screen.dart';
 import 'package:my_enrich/features/auth/presentation/page/email_verification_screen.dart';
 
-
-//TODO : UNDERSTAND THIS COMPLETE ROUTING METHOD
-
-final _log = Logger('AppRouter');
+final _log = getLogger('AppRouter');
 
 GoRouter createRouter(AuthProvider auth) {
   return GoRouter(

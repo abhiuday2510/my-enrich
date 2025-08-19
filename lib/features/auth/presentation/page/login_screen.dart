@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:logging/logging.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 import 'package:provider/provider.dart';
 
 import 'package:my_enrich/core/constants/circular_avatar_button.dart';
@@ -16,7 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _log = Logger('LoginScreen');
+  final _log = getLogger('LoginScreen');
 
   final _formKey = GlobalKey<FormState>();
   final _emailCtrl = TextEditingController();

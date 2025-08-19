@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
-import 'package:logging/logging.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({super.key});
@@ -11,7 +11,7 @@ class EmailVerificationScreen extends StatefulWidget {
 }
 
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
-  final _log = Logger('EmailVerificationPage');
+  final _log = getLogger('EmailVerificationPage');
   bool _busy = false;
   String? _snack;
 
