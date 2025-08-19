@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
+  final bool isLoading;          // <- optional, for spinner
 
   const PrimaryButton({
     super.key,
     required this.text,
-    required this.onPressed,
+    this.onPressed,              // <- nullable in ctor
+    this.isLoading = false,
   });
 
   @override
@@ -18,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
     final h = size.height;
 
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: isLoading ? null : onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 6,
         backgroundColor: theme.colorScheme.primary,
