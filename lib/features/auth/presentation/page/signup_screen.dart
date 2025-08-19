@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:logging/logging.dart';
 
 import 'package:my_enrich/core/constants/custom_text_field.dart';
 import 'package:my_enrich/core/constants/primary_button.dart';
 import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
 // If you created a helper like getLogger() in core/utils/logger.dart, you can import and use that instead.
-import 'package:my_enrich/core/utils/logger.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -18,7 +17,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   // Use a named logger so logs are easy to filter
-  final _log = Logger('SignUpScreen');
+  final _log = getLogger('SignUpScreen');
 
   final _formKey = GlobalKey<FormState>();
   final _nameCtrl = TextEditingController();
@@ -69,7 +68,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       await context.read<AuthProvider>().setDisplayName(fullName);
 
       if (!mounted) return;
-
       // Tell user what’s next. Router redirect logic will take user to /verify-email.
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Verification link sent. Please check your email.')),
@@ -77,8 +75,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       // You *don’t* need to navigate manually; your GoRouter redirect() will send
       // them to /verify-email when logged in but not verified.
-      // If you still want a hard navigation, uncomment:
-      // context.go('/verify-email');
 
     } catch (e, st) {
       _log.severe('Sign up threw unexpected error', e, st);

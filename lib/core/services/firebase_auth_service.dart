@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:logging/logging.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 
 
 class FirebaseAuthService {
 
-  final _log = Logger('FirebaseAuthService');
+  final _log = getLogger('FirebaseAuthService');
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   //gets the current state of the user if signed in or not

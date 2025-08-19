@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:logging/logging.dart';
 import 'package:my_enrich/core/constants/app_theme.dart';
 import 'package:my_enrich/core/utils/logger.dart';
 import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
@@ -8,7 +7,7 @@ import 'package:my_enrich/injection.dart';
 import 'package:my_enrich/routes/app_router.dart';
 import 'package:provider/provider.dart';
 
-final log = Logger('FirebaseInit');
+final log = getLogger('FirebaseInit');
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

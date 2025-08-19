@@ -6,7 +6,6 @@ class CustomTextField extends StatelessWidget {
   final IconData? icon;
   final TextEditingController? controller;
 
-  // ✨ New (form-friendly) props
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;

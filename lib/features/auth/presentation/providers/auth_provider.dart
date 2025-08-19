@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:logging/logging.dart';
+import 'package:my_enrich/core/utils/logger.dart';
 import 'package:my_enrich/features/auth/domain/repositories/auth_repository.dart';
 
 
 class AuthProvider with ChangeNotifier {
 
-  final _log = Logger('AuthProvider');
+  final _log = getLogger('AuthProvider');
   final AuthRepository _repo;
 
   AuthProvider(this._repo) {
