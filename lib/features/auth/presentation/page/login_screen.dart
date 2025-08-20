@@ -83,6 +83,33 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  Future<void> _onGoogleSignIn(BuildContext context) async {
+    if (_submitting) return;
+
+    setState(() => _submitting = true);
+    try {
+      _log.info('Google sign in started');
+
+      final err = await context.read<AuthProvider>().signInWithGoogle();
+
+      if (err != null) {
+        _log.warning('Google sign in failed: $err');
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(err)));
+        return;
+      }
+      _log.info('Google sign in success');
+    } catch (e, st) {
+      _log.severe('Google sign in threw unexpected error', e, st);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Something went wrong. Please try again.')),
+      );
+    } finally {
+      if (mounted) setState(() => _submitting = false);
+    }
+  }
+
   Future<void> _onForgotPassword(BuildContext context) async {
     // Optional UX: open a dialog to collect email and trigger password reset.
     final email = _emailCtrl.text.trim();
@@ -252,9 +279,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       CicularAvatarButton(
                         assetPath: 'assets/social/google.png',
                         iconSize: w * 0.08,
-                        onTap: () {
-                          // TODO: Google login logic (later)
-                          _log.info('Google login tapped');
+                        onTap: () async {
+                          await _onGoogleSignIn(context);
                         },
                       ),
                       SizedBox(width: w * 0.06),
