@@ -27,35 +27,54 @@ class AuthProvider with ChangeNotifier {
   // Sign-in with email & password; returns error message on failure (null on success)
   Future<String?> signInWithEmailAndPassword(String email, String password) async {
     try {
-      _log.info('signIn start');
+      _log.info('signInWithEmailAndPassword start');
       final u = await _repo.signInWithEmailAndPassword(email, password);
       _user = u;
       notifyListeners();
-      _log.info('signIn success; verified=${u?.emailVerified}');
+      _log.info('signInWithEmailAndPassword success; verified=${u?.emailVerified}');
       return null;
     } on FirebaseAuthException catch (e, st) {
-      _log.severe('signIn failed: ${e.code}', e, st);
+      _log.severe('signInWithEmailAndPassword failed: ${e.code}', e, st);
       return e.message;
     } catch (e, st) {
-      _log.severe('signIn failed (unknown)', e, st);
+      _log.severe('signInWithEmailAndPassword failed (unknown)', e, st);
       return 'Something went wrong. Please try again.';
     }
+  }
+
+  // Sign-in with google; returns error message on failure (null on success)
+  Future<String?> signInWithGoogle() async {
+    try {
+      _log.info('signInWithGoogle start');
+      final u = await _repo.signInWithGoogle();
+      _user = u;
+      notifyListeners();
+      _log.info('signInWithGoogle success');
+      return null;
+    } on FirebaseAuthException catch (e, st) {
+      _log.severe('signInWithGoogle failed: ${e.code}', e, st);
+      return e.message;
+    } catch (e, st) {
+      _log.severe('signInWithGoogle failed (unknown)', e, st);
+      return 'Something went wrong. Please try again.';
+    }
+    
   }
 
   // Sign-up + send verification email; returns error message on failure (null on success)
   Future<String?> signUpWithEmailAndPassword(String email, String password) async {
     try {
-      _log.info('signUp start');
+      _log.info('signUpWithEmailAndPassword start');
       final u = await _repo.signUpWithEmailAndPassword(email, password);
       _user = u;
       notifyListeners();
-      _log.info('signUp success; verification sent to ${u?.email}');
+      _log.info('signUpWithEmailAndPassword success; verification sent to ${u?.email}');
       return null;
     } on FirebaseAuthException catch (e, st) {
-      _log.severe('signUp failed: ${e.code}', e, st);
+      _log.severe('signUpWithEmailAndPassword failed: ${e.code}', e, st);
       return e.message;
     } catch (e, st) {
-      _log.severe('signUp failed (unknown)', e, st);
+      _log.severe('signUpWithEmailAndPassword failed (unknown)', e, st);
       return 'Something went wrong. Please try again.';
     }
   }
@@ -75,9 +94,13 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> signOut() async {
     _log.info('signOut');
+    try {
     await _repo.signOut();
     _user = null;
     notifyListeners();
+  } catch (e, st) {
+    _log.severe('Error during signOut', e, st);
+  }
   }
 
   Future<void> setDisplayName(String fullName) async{

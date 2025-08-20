@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_enrich/features/auth/presentation/providers/auth_provider.dart';
 import 'package:my_enrich/features/home/presentation/widgets/fancy_button.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -162,10 +165,17 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),
               BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
-              BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Settings'),
+              BottomNavigationBarItem(icon: Icon(Icons.logout_outlined), label: 'Logout'),
             ],
             currentIndex: 0,
-            onTap: (index) {},
+            onTap: (index) async {
+              if (index == 2) { 
+                await context.read<AuthProvider>().signOut();
+                if (context.mounted) context.go('/login');
+              } else {
+                // Handle other navigation if needed
+              }
+            }
           ),
         ),
       ),

@@ -17,6 +17,9 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<User?> signInWithEmailAndPassword(String email, String password) => _service.signInWithEmailAndPassword(email, password);
 
   @override
+  Future<User?> signInWithGoogle() => _service.signInWithGoogle();
+
+  @override
   Future<User?> signUpWithEmailAndPassword(String email, String password) => _service.signUpWithEmailAndPassword(email, password);
 
   @override
