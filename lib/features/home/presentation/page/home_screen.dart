@@ -27,6 +27,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     final w = size.width;
     final h = size.height;
 
+    final user = context.watch<AuthProvider>().user;
+    final displayName = user?.displayName ?? 'There';
+    final email = user?.email ?? '';
+    final photoUrl = user?.photoURL;
+
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
       body: Column(
@@ -64,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Hello, Abhiuday!',
+                          'Hello, ${displayName.split(' ').first}!',
                           style: TextStyle(
                             fontSize: w * 0.065,
                             fontWeight: FontWeight.w700,
@@ -92,15 +97,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           CircleAvatar(
                             radius: 32,
                             backgroundColor: theme.colorScheme.surface,
-                            child: Icon(Icons.person, size: 32, color: theme.colorScheme.onSurface),
+                            backgroundImage: photoUrl != null ? NetworkImage(photoUrl) : null,
+                            child: photoUrl == null ? const Icon(Icons.person) : null,
                           ),
                           const SizedBox(width: 16),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Abhiuday Ojha', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.colorScheme.onPrimary)),
+                              Text(displayName, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.colorScheme.onPrimary)),
                               const SizedBox(height: 4),
-                              Text('abhiuday@example.com', style: TextStyle(fontSize: 14, color: theme.colorScheme.onPrimary.withOpacity(0.85))),
+                              Text(email, style: TextStyle(fontSize: 14, color: theme.colorScheme.onPrimary.withOpacity(0.85))),
                             ],
                           )
                         ],
